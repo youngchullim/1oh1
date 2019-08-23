@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -22,6 +24,11 @@ class LoginForm extends React.Component {
     this.props.login({email: this.state.email, password: this.state.password});
   }
 
+  demoLogin(e) {
+    e.preventDefault();
+    let demo = {email: "young1@gmail.com", password: "password"};
+    this.props.login(demo);
+  }
 
   renderErrors() {
     if (this.props.errors.length > 0) {
