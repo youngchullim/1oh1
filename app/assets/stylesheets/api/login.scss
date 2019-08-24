@@ -1,110 +1,129 @@
 .login {
-  background-color: white;
-  width: 500px;
-  position: relative;
-  left: 35%;
-  top: 25%;
-  padding: 30px;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.login-form {
-  // display: flex;
-  // flex-direction: column;
+.login-section {
+  // height: 100vh;
   text-align: center;
+  width: 66%;
+  // padding: 0 10%;
+
 }
 
-.x-login {
-  height: 20px;
-  width: 20px;
-  margin-bottom: 20px;
-}
-
-.x-login:hover {
-  cursor: pointer;
+.login-title {
+  // text-align: center;
+  // width: 60%;
+  padding: 0 25%;
 }
 
 .login-message {
-  font-weight: 600;
-  font-size: 25px;
-  color: #484848;
-  text-align: left;
+  color: #2EA490;
+  font-size: 35px;
+  font-weight: 700;
 }
 
-.login-error-message {
-  color: red;
-  margin-bottom: 10px;
+.login-message2  {
+  color: rgba(0, 0, 0, 0.678);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  padding: 0 25%;
 }
 
 .login-info {
-  display: flex;
-  flex-direction: column;
+}
+
+.email-title {
+  text-align: left;
+  font-weight: 600;
+  margin: 15px 0;
 }
 
 .login-input {
   border: 1px solid lightgray;
   border-radius: 5px;
-  padding: 10px;
-  width: 475px;
-  margin: 5px 0;
+  width: 100%;
+  height: 40px;
   text-align: left;
+  padding: 0 20px;
+  margin-bottom: 10px;
 }
 
 .login-input:focus {
-  border: 1px solid #47A4A7;
+  border: 1px solid #2EA490;
 }
 
 .remember-submit {
   display: flex;
   flex-direction: row;
-  width: 125px;
-  margin-top: 5px;
-  margin-left: 2px;
-  color: #484848;
 }
-
 .remember-submit:hover {
   cursor: pointer;
 }
 
-// .remember-submit:focus {
-//   color: #47A4A7;
-// }
+.remember-checkbox:hover {
+  cursor: pointer;
+}
 
 .remember-me {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .login-button {
-  border-radius: 5px;
-  background-color: #FF595F;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  background-color: #2EA490;
   color: white;
-  width: 495px;
-  height: 38px;
+  width: 40%;
+  height: 40px;
   margin-top: 30px;
 }
 
-.demo-button {
-  border-radius: 5px;
-  background-color: #47A4A7;
-  color: white;
-  width: 495px;
-  height: 38px;
-  margin-top: 10px;
+.login-button:hover {
+  background-color: rgba(46, 164, 144, 0.849);
+}
+
+.login-submit {
   text-align: center;
 }
 
+.forgot-password {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+  width: 130px;  
+  text-align: center;
+  margin: 5% 37%;
+  color: rgba(0, 0, 0, 0.418);
+}
+.forgot-password:hover {
+  cursor: pointer;
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.login-error-message {
+  color: red;
+}
+
+// SIGN UP
 .signup-redirect {
   display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-  color: #989898;
+  flex-direction: column;
+  color: white;
+  background-color: lightblue;
+  height: 100vh;
+  align-items: center;
+  width: 33%;
 }
 
-.signup-link {
-  margin-left: 5px;
-  color: #47A4A7;
-}
-
-.signup-link:hover {
-  cursor: pointer;
+.signup-button {
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
 }

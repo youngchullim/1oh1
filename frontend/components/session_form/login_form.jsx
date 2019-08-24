@@ -10,7 +10,6 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -24,11 +23,6 @@ class LoginForm extends React.Component {
     this.props.login({email: this.state.email, password: this.state.password});
   }
 
-  demoLogin(e) {
-    e.preventDefault();
-    let demo = {email: "young1@gmail.com", password: "password"};
-    this.props.login(demo);
-  }
 
   renderErrors() {
     if (this.props.errors.length > 0) {
@@ -46,45 +40,51 @@ class LoginForm extends React.Component {
   render() {
     return(
       <div className="login">
-        {/* <button className="x-login" onClick={this.props.closeModal}>X</button> */}
-        <img className="x-login" onClick={this.props.closeModal} src={window.modalX} />
-        <div className="login-message">Log in to continue</div><br/>
-        <div className="login-form">
-            {/* DEMO BUTTON */}
-          <form onSubmit={this.handleSubmit} >
-            <div className="login-error-message">{this.renderErrors()}</div>
-            <div className="login-info">
-              <label onChange={this.props.clear}>
-                <input type="text"
-                  className="email-input login-input"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  placeholder="Email Address"
-                  />
-              </label>
-              <label onChange={this.props.clear}>
-                <input type="password"
-                  className="password-input login-input"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  placeholder="Password"
-                  />
-              </label>
-              <div className="login-submit">
-                <label className="remember-submit">
-                  <input className="remember-checkbox" type="checkbox"/>
-                  <div className="remember-me">Remember me</div>
+        <div className="login-section">
+          <div className="login-title">
+            <div className="login-message">Sign In to InMind</div><br/>
+            <div className="login-message2">Enter your details below.</div><br/>
+          </div>
+          <div className="login-form">
+            <form onSubmit={this.handleSubmit} >
+              <div className="login-error-message">{this.renderErrors()}</div>
+              <div className="login-info">
+                <div className="email-title">Email</div>
+                <label onChange={this.props.clear}>
+                  <input type="text"
+                    className="email-input login-input"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    placeholder="example@email.com"
+                    />
                 </label>
-                <div className="login-space-between"></div>
-                <input className="login-button" type="submit" value={"Log In"} />
-                <button className="demo-button" onClick={this.demoLogin}>Log In with Demo</button><br/> 
+                
+                <div className="email-title">Password</div>
+                <label onChange={this.props.clear}>
+                  <input type="password"
+                    className="password-input login-input"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    placeholder="Enter your password"
+                    />
+                </label>
+                <div className="login-submit">
+                  <label className="remember-submit">
+                    <input className="remember-checkbox" type="checkbox"/>
+                    <div className="remember-me">Remember me</div>
+                  </label>
+                  <div className="login-space-between"></div>
+                  <input className="login-button" type="submit" value={"SIGN IN"} />
+                </div>
+                <div to="/forgotPassword" className="forgot-password">Forgot Password?</div>
               </div>
-              <div className="signup-redirect">
-                <div className="no-account">Don't have an account?</div> 
-                <a className="signup-link" role="button" onClick={this.props.clear}>{this.props.signup}</a>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
+        </div>
+        <div className="signup-redirect">
+          <div className="hola">Hola!</div> 
+          <div className="hola-msg">Look into what your customer is thinking of today!</div> 
+          <a className="signup-button" role="button" onClick={this.props.clear} href="#/signup">SIGN UP</a>
         </div>
       </div>
     )
